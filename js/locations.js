@@ -4,16 +4,20 @@ var locations = [
         location: {lat: -32.911912, lng: -68.860137}
     },
     {
-        title: 'Tia Rasca',
+        title: 'Tia Rada',
         location: {lat: -32.912898, lng: -68.860165}
     },
     {
-        title: 'La granja de los Quesos',
-        location: {lat: -32.914685, lng: -68.860201}
+        title: 'UTN',
+        location: {lat: -32.8969997, lng: -68.8555522}
     },
-
+    { 
+        title: 'Galeria Caracol',
+        location: {lat: -32.8887733, lng: -68.8443335}
+    },
     {
-        title: 'La casa del IONI',
-        location: {lat: -32.908116, lng: -68.859394}
+        title: 'La Quinta',
+        location: {lat: -32.9017935, lng: -68.860098}
     }
+
    ];

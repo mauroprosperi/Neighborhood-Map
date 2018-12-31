@@ -30,33 +30,33 @@ function viewModel() {
                 self.htmlContentFoursquare = '<div>';
                 if (self.category) {
                     self.htmlContentFoursquare +=
-                        '<h5 class="iw_subtitle">(' +
+                        '<h5 class="marker_subtitle">(' +
                         self.category +
-                        ')</h5>'
+                        ')</h5>';
                 }
                 if (self.street) {
                     self.htmlContentFoursquare +=
-                        '<h6 class="iw_address_title"> Address: </h6> <p class="iw_address">' +
+                        '<h6 class="marker_address_title"> Address: </h6> <p class="marker_address">' +
                         self.street +
-                        '</p>'
+                        '</p>';
                 }
                 if (self.city) {
                     self.htmlContentFoursquare +=
-                        '<p class="iw_address">' +
+                        '<p class="marker_address">' +
                         self.city +
-                        '</p>'
+                        '</p>';
                 }
                 if (self.zip) {
                     self.htmlContentFoursquare +=
-                        '<p class="iw_address">' +
+                        '<p class="marker_address">' +
                         self.zip +
-                        '</p>  </div>'
+                        '</p>  </div>';
                 }
                 infowindow.setContent(self.markupContent + self.htmlContentFoursquare);
             }).fail(function () {
                 alert(" an error was found loading the API");
             });
-            this.markupContent = '<h4 class="iw_title">' + marker.title + '</h4>';
+            this.markupContent = '<h4 class="marker_title">' + marker.title + '</h4>';
             infowindow.open(map, marker);
             infowindow.addListener('click', function () {
                 infowindow.marker = null;
@@ -64,9 +64,9 @@ function viewModel() {
         }
     };
 
-    // This function takes in a COLOR, and then creates a new marker
-    // icon of that color. The icon will be 21 px wide by 34 high, have an origin
-    // of 0, 0 and be anchored at 10, 34).
+    /* This function takes in a COLOR, and then creates a new marker
+    icon of that color. The icon will be 21 px wide by 34 high, have an origin
+    of 0, 0 and be anchored at 10, 34). */
     this.makeMarkerIcon = function (markerColor) {
         var markerImage = new google.maps.MarkerImage(
             'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
@@ -76,7 +76,7 @@ function viewModel() {
             new google.maps.Point(10, 34),
             new google.maps.Size(21, 34));
         return markerImage;
-    }
+    };
 
     this.markerPopulate = function () {
         self.populateInfoWindow(this, self.infoWindowMaps);
@@ -85,8 +85,8 @@ function viewModel() {
             this.setAnimation(null);
         }).bind(this), 1400);
     };
-    // Two event listeners - one for mouseover, one for mouseout,
-    // to change the colors back and forth.
+    /* Two event listeners - one for mouseover, one for mouseout,
+    to change the colors back and forth. */
     this.changeIcontoHighlight = function () {
         this.setIcon(self.highlightedIcon);
     };
@@ -96,16 +96,16 @@ function viewModel() {
 
     this.initMap = function () {
         map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: -32.912951, lng: -68.862329 },
-            zoom: 15,
+            center: { lat: -32.904111, lng: -68.8617993},
+            zoom: 14,
             styles: styles,
             mapTypeControl: false
         });
 
         // Style the markers a bit. This will be our listing marker icon.      
         self.defaultIcon = this.makeMarkerIcon('0091ff');
-        // Create a "highlighted location" marker color for when the user
-        // mouses over the marker.
+        /* Create a "highlighted location" marker color for when the user
+        mouses over the marker.*/
         self.highlightedIcon = this.makeMarkerIcon('FFFF24');
         this.infoWindowMaps = new google.maps.InfoWindow();
         for (var i = 0; i < locations.length; i++) {
@@ -124,8 +124,8 @@ function viewModel() {
             this.googleMarker.setMap(map);
             this.markers.push(this.googleMarker);
             this.googleMarker.addListener('click', self.markerPopulate);
-            // Two event listeners - one for mouseover, one for mouseout,
-            // to change the colors back and forth.
+            /* Two event listeners - one for mouseover, one for mouseout,
+            to change the colors back and forth.*/
             this.googleMarker.addListener('mouseover', self.changeIcontoHighlight);
             this.googleMarker.addListener('mouseout', self.changeIconToDefault);
         }
@@ -152,7 +152,7 @@ function viewModel() {
         return result;
     }, this);
 
-} // fin de la viewmodel
+}
 googleError = function googleError() {
     alert(
         'Google Maps did not load. Please refresh the page or try again later'

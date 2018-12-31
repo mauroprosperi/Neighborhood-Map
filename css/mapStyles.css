@@ -1,0 +1,71 @@
+.app_title {
+    padding: 15px 5px 10px 5px;
+}
+
+.sidebar_hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,1);
+}
+
+.location_list {
+    padding: 5px 5px 5px 5px;
+}
+
+#map{
+    min-height: 100vh;
+}
+
+.marker_title {
+    font-size: 1.5em;
+    margin-bottom: -0.1px;
+}
+
+.marker_subtitle {
+    margin-top: 0.5px;
+    font-size: 1em;
+}
+
+.marker_address_title {
+    margin-bottom: 5px;
+    font-size: .95em;
+}
+.background{
+    background-color:#242f3e;
+}
+
+.marker_address {
+    margin-bottom: 0;
+    font-size: .9em;
+}
+
+.searcher {
+    width: 100%;
+    font-size: .9em;
+}
+
+.foursquare {
+    position: absolute;
+    bottom: 2px;
+    width: 60%;
+    right: 0;
+}
+
+.map_error {
+    text-align: center;
+    position: absolute;
+    color: red;
+    top: 50%;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .searcher {
+        font-size: 1em;
+        margin-top: 5px;
+    }
+    .marker_address {
+        font-size: .7em;
+    }
+}

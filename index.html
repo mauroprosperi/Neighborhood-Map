@@ -1,1 +1,54 @@
-PICKLE RICK
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="Neighborhood Map Project" content="Map of Mendoza(ARG)">
+    <meta name="Gulamabbas Mawji" content="SitePoint">
+
+    <title>Udacity Neighborhood Map Project --- Mauro S. Q. Prosperi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mapStyles.css">
+</head>
+
+<body>
+    <div class="background">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="search-area text-center form-group">
+                            <h4 class="app_title text-white">Neighborhood Map</h4>
+                            <input class="searcher" data-bind="textInput: searchOption" placeholder="Search Locations...">
+                        </div>
+                        <hr class="sidebar_hr">
+                        <ul class="nav flex-column" data-bind="foreach: myLocationsFilter">
+                            <a href="#">
+                                <li class="nav-item text-white location_list" data-bind="text: title, click: $parent.markerPopulate"></li>
+                            </a>
+                        </ul>
+                        <img class="foursquare" src="img/foursquare_attr.png" srcset="img/foursquare_attr@2x.png" alt="Powered By Foursquare!">
+                    </div>
+                    <div class="col-sm-8" id="map">
+                    </div>
+                    <p class="map_error">UPS, SOMETHING GO REALLY WRONG, RELOAD O TRY LATER PLEASE.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/knockout-3.4.2.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="js/locations.js" charset="utf-8"></script>
+    <script src="js/styles.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBRTschOElF6NRclmCZymKOoGb0jKlNtfU&callback=init"
+        onerror="googleError()">
+        </script>
+</body>
+
+</html>
